@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/expand_list_item1_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="#fefefe"
+            tools:text="qwer"
+            android:textColor="#555"
+            android:textSize="16dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            />
+
+        <TextView
+            android:id="@+id/tvInput"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingRight="15dp"
+            android:layout_height="45dp"
+            android:background="#fefefe"
+            android:hint="请输入"
+            android:textColor="#222"
+            android:textSize="16dp"
+            android:gravity="center_vertical|right"
+            android:paddingLeft="15dp"
+            android:visibility="visible"
+            />
+
+        <ImageView
+            android:id="@+id/ivInput"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:paddingRight="15dp"
+            android:layout_height="45dp"
+            android:background="#fefefe"
+            android:paddingTop="5dp"
+            android:paddingBottom="3dp"
+            android:gravity="center_vertical|right"
+            android:paddingLeft="15dp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <Button
+            android:id="@+id/btSubmin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="提交"
+            android:layout_margin="6dp"
+            android:textColor="#fff"
+            android:background="@color/colorMain"
+            />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#efefef"
+        />
+
+</LinearLayout>
