@@ -1,6 +1,5 @@
-package com.ccb.zjinputdemo;
+package com.ccb.recyclerinput;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -14,10 +13,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.ccb.zjinputdemo.adapter.CcExpandableAdapter;
-import com.ccb.zjinputdemo.recycler_item.BoyItem;
-import com.ccb.zjinputdemo.recycler_item.ExpandItem;
-import com.ccb.zjinputdemo.utils.GlideEngine;
+import com.ccb.recyclerinput.adapter.CcExpandableAdapter;
+import com.ccb.recyclerinput.recycler_item.BoyItem;
+import com.ccb.recyclerinput.recycler_item.ExpandItem;
+import com.ccb.recyclerinput.utils.GlideEngine;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.google.gson.Gson;

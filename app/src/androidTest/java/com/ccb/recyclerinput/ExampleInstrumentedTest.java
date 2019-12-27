@@ -1,4 +1,4 @@
-package com.ccb.zjinputdemo;
+package com.ccb.recyclerinput;
 
 import android.content.Context;
 

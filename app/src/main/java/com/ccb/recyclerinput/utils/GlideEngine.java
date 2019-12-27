@@ -1,4 +1,4 @@
-package com.ccb.zjinputdemo.utils;
+package com.ccb.recyclerinput.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -17,7 +17,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.bumptech.glide.request.target.ImageViewTarget;
 import com.bumptech.glide.request.transition.DrawableCrossFadeFactory;
-import com.ccb.zjinputdemo.R;
+import com.ccb.recyclerinput.R;
 import com.luck.picture.lib.engine.ImageEngine;
 import com.luck.picture.lib.tools.MediaUtils;
 import com.luck.picture.lib.widget.longimage.ImageSource;

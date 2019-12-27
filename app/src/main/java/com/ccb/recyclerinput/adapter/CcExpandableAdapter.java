@@ -1,18 +1,21 @@
-package com.ccb.zjinputdemo.adapter;
+package com.ccb.recyclerinput.adapter;
 
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.ccb.zjinputdemo.MainActivity;
-import com.ccb.zjinputdemo.R;
-import com.ccb.zjinputdemo.dialog.InputAlertDialog;
-import com.ccb.zjinputdemo.recycler_item.BoyItem;
-import com.ccb.zjinputdemo.recycler_item.ExpandItem;
+import com.ccb.recyclerinput.MainActivity;
+import com.ccb.recyclerinput.R;
+import com.ccb.recyclerinput.dialog.InputAlertDialog;
+import com.ccb.recyclerinput.recycler_item.BoyItem;
+import com.ccb.recyclerinput.recycler_item.ExpandItem;
+import com.ccb.recyclerinput.utils.GlideEngine;
+import com.ccb.recyclerinput.utils.ViewUtils;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
+import com.luck.picture.lib.tools.ToastUtils;
 
 import java.util.List;
 
@@ -54,7 +57,8 @@ public class CcExpandableAdapter extends BaseMultiItemQuickAdapter<MultiItemEnti
                 helper.setGone(R.id.tvInput, boyData.getType() == BoyItem.TYPE.TEXT);
                 helper.setGone(R.id.ivInput, boyData.getType() == BoyItem.TYPE.IMAGE);
                 helper.setText(R.id.tvInput,boyData.getContent());
-                Glide.with(mContext).load(boyData.getContent()).into((ImageView) helper.getView(R.id.ivInput));
+                ViewUtils.loadGridImage(mContext,boyData.getContent(),(ImageView) helper.getView(R.id.ivInput));
+//                Glide.with(mContext).load(boyData.getContent()).into((ImageView) helper.getView(R.id.ivInput));
                 helper.getView(R.id.btSubmin).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -82,19 +86,24 @@ public class CcExpandableAdapter extends BaseMultiItemQuickAdapter<MultiItemEnti
     private InputAlertDialog inputAlertDialog;
 
     private void showDialog(final int position) {
-        if (inputAlertDialog == null) inputAlertDialog = new InputAlertDialog(mContext).bunlid();
-        final BoyItem boyItem = (BoyItem) getData().get(position);
+        if (getData().get(position) instanceof BoyItem) {
+            final BoyItem boyItem = (BoyItem) getData().get(position);
+            if (inputAlertDialog == null)
+                inputAlertDialog = new InputAlertDialog(mContext).bunlid();
 
-        inputAlertDialog.setTitleText(boyItem.getTitle());
-        inputAlertDialog.setInputText(boyItem.getContent());
-        inputAlertDialog.setSubmitClickList(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                boyItem.setContent(inputAlertDialog.getInputText());
-                setData(position , boyItem);
-                inputAlertDialog.dissmiss();
-            }
-        });
-        inputAlertDialog.show();
+            inputAlertDialog.setTitleText(boyItem.getTitle());
+            inputAlertDialog.setInputText(boyItem.getContent());
+            inputAlertDialog.setSubmitClickList(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    boyItem.setContent(inputAlertDialog.getInputText());
+                    setData(position, boyItem);
+                    inputAlertDialog.dissmiss();
+                }
+            });
+            inputAlertDialog.show();
+        }else {
+            ToastUtils.s(mContext,"数据格式有误");
+        }
     }
 }

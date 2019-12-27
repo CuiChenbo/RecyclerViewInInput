@@ -1,25 +1,23 @@
-package com.ccb.zjinputdemo.dialog;
+package com.ccb.recyclerinput.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ccb.zjinputdemo.R;
-import com.ccb.zjinputdemo.utils.ViewUtils;
+import com.ccb.recyclerinput.R;
+import com.ccb.recyclerinput.utils.ViewUtils;
 
 
 /**
- * 蓝牙的的提示Dialog -- 支持全部的蓝牙弹窗样式
+ * 贴合在软键盘之上的 Dialog
  */
 public class InputAlertDialog {
 

@@ -1,6 +1,6 @@
-package com.ccb.zjinputdemo.recycler_item;
+package com.ccb.recyclerinput.recycler_item;
 
-import com.ccb.zjinputdemo.adapter.CcExpandableAdapter;
+import com.ccb.recyclerinput.adapter.CcExpandableAdapter;
 import com.chad.library.adapter.base.entity.AbstractExpandableItem;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 

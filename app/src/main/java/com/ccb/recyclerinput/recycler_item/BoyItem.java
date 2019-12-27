@@ -1,4 +1,4 @@
-package com.ccb.zjinputdemo.recycler_item;
+package com.ccb.recyclerinput.recycler_item;
 
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
